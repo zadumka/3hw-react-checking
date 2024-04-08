@@ -4,11 +4,9 @@ import { Contact } from "../Contact/Contact"
 export const ContactList = ({ contacts, onDelete}) => {
 
     return (
-        <div className={css.contactList}>
-          {contacts.map(contact => (
-            <Contact key={contact.id} contact={contact} onDelete={onDelete}/>
-          ))}
-        </div>
-      );
-    
-}
+    <ul className={styles.contactList}>
+      {contacts.map((contact, index) => (
+        <Contact key={index} contact={contact} onDeleteContact={onDeleteContact} />
+      ))}
+    </ul>
+  );
